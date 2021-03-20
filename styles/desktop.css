@@ -1,0 +1,27 @@
+.icon-cal,
+.icon-todo,
+.icon-countup {
+  display: none;
+}
+
+.pics-title {
+  display: none;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: auto;
+  width: 500px;
+}
+
+.flex-item {
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+/*# sourceMappingURL=desktop.css.map */

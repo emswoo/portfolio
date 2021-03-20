@@ -1,0 +1,62 @@
+#app {
+  height: 110vh;
+}
+
+#pics-box {
+  display: none;
+}
+
+#todo-box {
+  display: none;
+}
+
+#cal-box {
+  display: none;
+}
+
+#countup-box {
+  display: none;
+}
+
+#scroll-box {
+  display: none;
+}
+
+#pics-box-sp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.pics-title {
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 2px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: auto;
+  width: 300px;
+}
+
+.flex-item {
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+/*# sourceMappingURL=mobile.css.map */

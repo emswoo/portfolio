@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ANIMATION -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/mobile.css" media="screen and (max-width: 600px)">
+    <link rel="stylesheet" href="styles/desktop.css" media="screen and (min-width: 601px)">
+</head>
+<body>
+    <!-- LOADING -->
+    <!-- <div id="loader-bg" class="is-hide">
+       <div id="loader" class="is-hide">
+       <div class="big-loader"><img src="images/loading.png" width="100" height="100"></div>
+       <p class="loading">Loading...</p>
+       </div>
+    </div> -->
+
+    <!-- CONTENTS -->
+    <div id="app"><br><br>
+    <div id="reverse-box">
+    <!-- REVERSE TITLE & REVERSE BUTTON -->
+        <p class="reverse-name">{{ title }}</p>
+        <button class="reverse-button" @click="reverseTitle">
+        <img class="icon-arrow" v-bind:src="imageArrow" width="12" height="12">
+        Try me!&nbsp;</button>
+    </div>
+
+    <!-- TO DO LIST -->
+    <div id="todo-box">What to do?
+        <input class="input-box" type="text" v-model="newTask">
+        <!-- <button @click="addTodo()"> -->
+        <img class="add-button" @click="addTodo()" v-bind:src="imageAdd" width="23" height="23">
+        <!-- </button> -->
+        <ul>
+           <li class="futureTask" v-for="todo in todos">
+              <label v-bind:class="{ done: todo.isCompleted }">
+              <input class="task-box" type="checkbox" v-model="todo.isCompleted"></label>
+              <span class="taskList" :class="{ 'complete': todo.isCompleted }">{{ todo.task }}</span>
+              <!-- <button class="close-button" @click="deleteTodo(todo)"> -->
+              <img class="close-button" @click="deleteTodo(todo)" v-bind:src="imageClose" width="23" height="23">
+              <!-- </button> -->
+           </li>
+        </ul>
+    </div>
+
+     <!-- CALCULATOR -->
+     <div id="cal-box">
+        <form name="myForm"> 
+            <div class="group-input">
+            <input class="output-box" type="text" name="myLine" value="0"></div>
+       
+            <div class="group1">
+            <input class="plus" type="button" value="+" onclick="myCalculate('+')">
+            <input class="minus" type="button" value="-" onclick="myCalculate('-')">
+            <input class="multiple" type="button" value="x" onclick="myCalculate('*')">
+            <input class="divide" type="button" value="÷" onclick="myCalculate('/')"></div>
+      
+            <div class="group2">
+            <input class="num7" type="button" value="7" onclick="myValue(7)">
+            <input class="num8" type="button" value="8" onclick="myValue(8)">
+            <input class="num9" type="button" value="9" onclick="myValue(9)"></div>
+            
+            <div class="group3">
+            <input class="num4" type="button" value="4" onclick="myValue(4)">
+            <input class="num5" type="button" value="5" onclick="myValue(5)">
+            <input class="num6" type="button" value="6" onclick="myValue(6)"></div>
+            
+            <div class="group4">
+            <input class="num1" type="button" value="1" onclick="myValue(1)">
+            <input class="num2" type="button" value="2" onclick="myValue(2)">
+            <input class="num3" type="button" value="3" onclick="myValue(3)"></div>
+            
+            <div class="group5">
+            <input class="num0" type="button" value="0" onclick="myValue(0)">
+            <input class="dot" type="button" value="." onclick="myValue('.')">
+            <input class="equal" type="button" value="=" onclick="myCalculate('=')">
+            <input class="clear" type="button" value="C" onclick="myC()"></div>
+        </form>
+        </div>
+
+    <!-- COUNT UP -->
+    <div id="countup-box">
+        <p class="click-display">You clicked
+        <span class="number-display">{{ number }}</span> 
+        <span>times!</span></p>
+        <button class="count-button" @click="countUp">+</button>
+    </div>
+
+    <!-- PC PICS -->
+    <div id="pics-box">
+        <img class="icon-pencil" v-bind:src="imagePencil" width="150" height="150">
+        <img class="icon-eraser" v-bind:src="imageEraser" width="80" height="80">
+        <img class="icon-ruler" v-bind:src="imageRuler" width="150" height="150">
+        <img class="icon-scissors" v-bind:src="imageScissors" width="150" height="150">
+        <img class="icon-triangle" v-bind:src="imageTriangle" width="100" height="100">
+        <img class="icon-clip" v-bind:src="imageClip" width="50" height="50">
+        <img class="icon-clip2" v-bind:src="imageClip2" width="50" height="50">
+    </div>
+
+    <!-- SP PICS -->
+    <div id="pics-box-sp">
+        <p class="pics-title">CONTENTS</p>
+        <a href="cal.html"><img class="icon-cal" v-bind:src="imageCal" width="150" height="150"></a>
+        <a href="todo.html"><img class="icon-todo" v-bind:src="imageTodo" width="150" height="150"></a>
+        <a href="countup.html"><img class="icon-countup" v-bind:src="imageCountUp" width="150" height="150"></a>
+    </div>
+
+    <!-- V BUTTON -->
+    <div id="scroll-box">
+        <p class="scroll-down"><a href="#app2">
+        <img v-bind:src="imageScrollDown" width="30" height="30"></a></p>
+    </div>
+</div>
+
+    <div id="app2">
+    <!-- 自己紹介ページ -->
+        <p class="name">Emmy Hayashi</p>
+        <p class="about-me">FACTS ABOUT ME</p>
+        <hr width="280" noshade>
+        <hr class="under-hr" width="200" noshade><br>
+        <p class="intro-details">
+        ウェブデザイナーを目指しています。<br>
+        独学でスキルを取得しました。<br><br>
+        ウェブデザイナーを目指しています。<br>
+        独学でスキルを取得しました。<br><br>
+        ウェブデザイナーを目指しています。<br>
+        独学でスキルを取得しました。
+        </p>
+
+        <p class="carrer">CARRER</p>
+        <hr width="280" noshade>
+        <hr class="under-hr" width="200" noshade><br>
+        <p class="intro-details">
+        ウェブデザイナーを目指しています。<br>
+        独学でスキルを取得しました。<br><br>
+        ウェブデザイナーを目指しています。<br>
+        独学でスキルを取得しました。<br><br>
+        ウェブデザイナーを目指しています。<br>
+        独学でスキルを取得しました。
+        </p>
+
+        <p class="skills">SKILL SET</p>
+        <hr width="280" noshade>
+        <hr class="under-hr-skill" width="200" noshade>
+    
+    <!-- スキルアイコンの並べ -->
+    <div class="container">
+        <div class="flex-item">
+            <p>HTML5<p>
+            <img class="icon-html" v-bind:src="imageHtml" width="60" height="60">
+        </div>
+        <div class="flex-item">
+            <p>CSS3</p>
+            <img class="icon-css" v-bind:src="imageCss" width="60" height="60">
+        </div>
+        <div class="flex-item">
+            <p>Sass</p>
+            <img class="icon-sass" v-bind:src="imageSass" width="60" height="60">
+        </div>
+        <div class="flex-item">
+            <p>Bootstrap</p>
+            <img class="icon-bs" v-bind:src="imageBs" width="60" height="60">
+        </div>
+        <div class="flex-item">
+            <p>JavaScript</p>
+            <img class="icon-js" v-bind:src="imageJs" width="50" height="50">
+        </div>
+        <div class="flex-item">
+            <p>Vue.js</p>
+            <img class="icon-vue" v-bind:src="imageVue" width="60" height="60">
+        </div>
+        <div class="flex-item">
+            <p>Node.js</p>
+            <img class="icon-nodejs" v-bind:src="imageNodejs" width="60" height="60">
+        </div>
+        <div class="flex-item">
+            <p>GitHub</p>
+            <img class="icon-github" v-bind:src="imageGithub" width="60" height="60">
+        </div>
+        <div class="flex-item">
+            <p>VS Code</p>
+            <img class="icon-vs" v-bind:src="imageVs" width="60" height="60">
+        </div>
+        <div class="flex-item">
+            <p>GIMP</p>
+            <img class="icon-gimp" v-bind:src="imageGimp" width="60" height="60">
+        </div>
+    </div>
+        <!-- <td align="center">HTML5</td>
+        <td align="center">CSS3</td>
+        <td align="center">Sass</td>
+        <td align="center">Bootstrap</td>
+        <td align="center">JavaScript</td> -->
+
+        <!-- <td align="center">Vue.js</td>
+        <td align="center">Node.js</td>
+        <td align="center">GitHub</td>
+        <td align="center">VS Code</td>
+        <td align="center">Gimp</td> -->
+
+        <p class="offer">GALLERY</p>
+        <hr width="280" noshade>
+        <hr class="under-hr" width="200" noshade><br>
+        <p class="intro-details">
+        ウェブデザイナーを目指しています。<br>
+        独学でスキルを取得しました。<br><br>
+        ウェブデザイナーを目指しています。<br>
+        独学でスキルを取得しました。<br><br>
+        ウェブデザイナーを目指しています。<br>
+        独学でスキルを取得しました。
+        </p>
+    
+    <!-- TOP BUTTON -->
+        <a href="#app" v-smooth-scroll>
+        <img class="iconTop" v-bind:src="imageTop" width="30" height="30"></a>
+        <p class="top">TOP</p>
+    </div>
+
+    <!-- SCRIPTS-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="script/main.js"></script>
+</body>
+</html>

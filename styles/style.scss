@@ -1,0 +1,559 @@
+$black: black;
+$white: white;
+$gray: gray;
+$yellow: rgb(250, 237, 119);
+
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $yellow;
+}
+
+/* ローディング画面 */
+// .is-hide {
+//   display: none;
+// }
+
+// .fadeout-bg {
+//   transition-property: opacity;
+//   transition-delay: 0.9s;
+//   transition-duration: 0.8s;
+//   opacity: 0;
+//   pointer-events: none;
+// }
+
+// .fadeout-loader {
+//   transition-property: opacity;
+//   transition-delay: 0.9s;
+//   transition-duration: 0.3s;
+//   opacity: 0;
+//   pointer-events: none;
+// }
+
+// #loader-bg {
+//   background: $yellow;
+//   height: 100%;
+//   left: 0;
+//   position: fixed;
+//   top: 0;
+//   width: 100%;
+//   z-index: 100;
+// }
+
+// #loader {
+//   height: 120px;
+//   left: 50%;
+//   margin-left: -60px;
+//   margin-top: -60px;
+//   position: fixed;
+//   top: 50%;
+//   width: 120px;
+
+//   & p {
+//     color: $black;
+//     font-size: 15px;
+//     line-height: 1.4;
+//     text-align: center;
+//     margin-top: 10px;
+//   }
+// }
+
+// .big-loader {
+//   animation: jello;
+//   animation-duration: 2s;
+// }
+
+// .loading {
+//   font-family: "Poppins", sans-serif;
+//   letter-spacing: 1px;
+// }
+
+.reverse-name {
+  font-family: "Lobster", cursive;
+  font-size: 40px;
+  text-align: center;
+  line-height: 1px;
+  animation: flip;
+  animation-duration: 3s;
+}
+
+.reverse-button {
+  font-family: "Varela Round", sans-serif;
+  color: $white;
+  border: none;
+  padding: 7px;
+  background: $black;
+  outline: none;
+  display: table;
+  margin: auto;
+  margin-top: 40px;
+  letter-spacing: 1px;
+
+  &:hover {
+    color: $gray;
+  }
+}
+
+.textInput {
+  border-radius: 20px;
+  border: none;
+  height: 30px;
+  width: 200px;
+}
+
+/* TO DO LIST */
+#todo-box {
+  font-family: "Varela Round", sans-serif;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.input-box {
+  font-family: "Varela Round", sans-serif;
+  font-size: 15px;
+  outline: none;
+  margin-top: 70px;
+  margin-left: 10px;
+  border: none;
+  line-height: 30px;
+  width: 260px;
+  height: 28px;
+  padding: 8px;
+}
+
+.add-button {
+  border: none;
+  outline: none;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.close-button {
+  border: none;
+  margin-left: 18px;
+  margin-top: 10px;
+  outline: none;
+  vertical-align: bottom;
+}
+
+.futureTask {
+  display: table;
+  margin: auto;
+}
+
+.taskList {
+  font-family: "Varela Round", sans-serif;
+  letter-spacing: 1px;
+  margin-left: 10px;
+}
+
+/* ul > li > .complete {
+  text-decoration: line-through;
+} */
+
+ul li:nth-child(n + 9) {
+  display: none;
+}
+
+/* COUNT UP */
+#cal-box {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  right: 40px;
+  bottom: 100px;
+}
+
+#countup-box {
+display: flex;
+justify-content: flex-end;
+position: relative;
+bottom: 120px;
+}
+
+.click-display {
+  font-family: "Varela Round", sans-serif;
+  letter-spacing: 1px;
+  margin-right: 20px;
+  margin-top: 50px;
+}
+
+.number-display {
+  font-size: 50px;
+  margin-top: 50px;
+}
+
+.count-button {
+  background: $black;
+  color: $white;
+  outline: none;
+  padding: 1px 9px;
+  border: none;
+  font-size: 28px;
+  margin-top: 60px;
+  margin-right: 40px;
+}
+
+/* Pictures */
+.icon-pencil {
+  position: absolute;
+  top: 350px;
+  left: 100px;
+}
+
+.icon-eraser {
+  position: absolute;
+  top: 290px;
+  left: 90px;
+}
+
+.icon-ruler {
+  position: absolute;
+  top: 60px;
+  left: 30px;
+}
+
+.icon-scissors {
+  position: absolute;
+  top: 150px;
+  left: 190px;
+}
+
+.icon-triangle {
+  position: absolute;
+  top: 60px;
+  left: 260px;
+}
+
+.icon-clip {
+  position: absolute;
+  top: 350px;
+  left: 300px;
+}
+
+.icon-clip2 {
+  position: absolute;
+  top: 420px;
+  left: 260px;
+}
+
+/* Calc */
+.output-box {
+  font-family: "Varela Round", sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  outline: none;
+  border-radius: 100px;
+  border: none;
+  width: 200px;
+  height: 30px;
+  text-align: right;
+  padding: 10px;
+  margin-right: 40px;
+  margin-bottom: 10px;
+}
+
+.plus,
+.minus,
+.multiple,
+.divide {
+  font-size: 40px;
+  background: none;
+  border: none;
+  font-family: "Press Start 2P", cursive;
+  outline: none;
+  margin: 3px;
+}
+
+.num7,
+.num8,
+.num9,
+.num4,
+.num5,
+.num6,
+.num1,
+.num2,
+.num3 {
+  font-size: 30px;
+  background: none;
+  border: none;
+  font-family: "Press Start 2P", cursive;
+  outline: none;
+  margin: 8px;
+}
+
+.num0,
+.dot,
+.equal,
+.clear {
+  font-size: 30px;
+  background: none;
+  border: none;
+  font-family: "Press Start 2P", cursive;
+  outline: none;
+  margin: 8px;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 0;
+  left: 610px;
+  line-height: none;
+  animation: bounce infinite;
+  animation-duration: 2s;
+}
+
+.iconTop {
+  display: table;
+  margin: auto;
+}
+
+.top {
+  font-family: "Varela Round", sans-serif;
+  letter-spacing: 1px;
+  font-size: 12px;
+  text-decoration: none;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+#app {
+  height: 100vh;
+}
+
+.science-bg {
+  display: table;
+  margin: auto;
+  margin-top: 100px;
+}
+
+/* チェックボックス（非表示） */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* 自己紹介ページ */
+.name {
+  font-family: "Lobster", cursive;
+  font-size: 60px;
+  margin-left: 20px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.about-me {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 50px;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.carrer {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 30px;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.skills {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 30px;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.offer {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 30px;
+  margin-left: 10px;
+  text-align: center;
+}
+
+hr {
+  margin: auto;
+  border: 1px solid;
+  border-color: $gray;
+}
+
+.under-hr {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.under-hr-skill {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+.intro-details {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  margin-left: 20px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+/* スキルアイコン */
+.icon-html,
+.icon-css,
+.icon-sass,
+.icon-bs,
+.icon-js,
+.icon-vue,
+.icon-nodejs,
+.icon-github,
+.icon-vs,
+.icon-gimp {
+  margin: 20px;
+}
+
+/* レスポンシブ */
+// $pc: 1900px;
+// $pc-end: 1001px;
+// $mid: 1000px;
+// $mid-end: 599px;
+// $sp: 600px;
+
+// @mixin pc {
+//   @media (max-width: ($pc)) and (min-width: ($pc-end)) {
+//     @content;
+//   }
+// }
+
+// @mixin mid {
+//   @media (max-width: ($mid)) and (min-width: ($mid-end)) {
+//     @content;
+//   }
+// }
+
+// @mixin sp {
+//   @media (max-width: ($sp)) {
+//     @content;
+//   }
+// }
+
+// // PC PICS
+// #pics-box {
+//   @include mid {
+//     display: none;
+//   }
+// }
+//   @include sp {
+//     display: none;
+//   }
+// }
+
+// SP PICS
+// #pics-box-sp {
+//   @include sp {
+//     display: flex;
+//     flex-direction: column;
+//     text-align: center;
+//   }
+// }
+
+// .icon-cal,
+// .icon-todo,
+// .icon-countup {
+//   @include pc {
+//     display: none;
+//   }
+//   @include mid {
+//     display: none;
+//   }
+// }
+
+// .pics-title {
+//   @include pc {
+//     display: none;
+//   }
+//   @include mid {
+//     display: none;
+//   }
+  // @include sp {
+  //   font-family: "Oswald", sans-serif;
+  //   letter-spacing: 2px;
+  //   font-size: 30px;
+  //   font-weight: bold;
+  //   text-align: center;
+  //   margin-top: 50px;
+  //   margin-bottom: 30px;
+  // }
+// }
+
+// TO DO LIST
+// #todo-box {
+//   @include mid {
+//     position: absolute;
+//     top: 130px;
+//     left: 90px;
+//   }
+  // @include sp {
+  //   display: none;
+  // }
+// }
+
+// CALCULATOR
+// #cal-box {
+//   @include mid {
+//     position: absolute;
+//     bottom: 180px;
+//   }
+  // @include sp {
+  //   display: none;
+  // }
+// }
+
+// COUNT UP
+// #countup-box {
+//   @include mid {
+//     position: relative;
+//     top: 300px;
+//   }
+  // @include sp {
+  //   display: none;
+  // }
+// }
+
+// V BUTTON
+// .scroll-down {
+//   @include mid {
+//     position: absolute;
+//     bottom: 0;
+//     left: 480px;
+//   }
+// }
+
+// 画面
+// #app {
+//   @include sp {
+//     height: 110vgh;
+//   }
+// }
+
+// スキルアイコンの折り返し

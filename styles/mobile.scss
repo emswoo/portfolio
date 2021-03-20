@@ -1,0 +1,53 @@
+#app {
+  height: 110vh;
+}
+
+#pics-box {
+  display: none;
+}
+
+#todo-box {
+  display: none;
+}
+
+#cal-box {
+  display: none;
+}
+
+#countup-box {
+  display: none;
+}
+
+#scroll-box {
+    display: none;
+}
+
+#pics-box-sp {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.pics-title {
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 2px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 300px;
+}
+
+.flex-item {
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
